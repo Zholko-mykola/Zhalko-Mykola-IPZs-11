@@ -1,0 +1,145 @@
+@import"./variables.scss";
+@import"./mixin.scss";
+
+@media (max-width:1024px){
+    .logo{
+        font-size: 26px !important;
+        margin-right:0 !important;
+        &_foooter{
+            font-size: 24px !important;
+        }
+    }
+    .info {
+        flex-direction: column;
+        gap:10px !important; 
+        padding-top: 19px !important;
+        padding-bottom: 19px !important;
+        align-items: normal !important;
+        font-size: 12px;
+    }
+}
+.menu{
+    &_android{
+        display: none;
+    }    
+}
+
+@media (max-width:640px){
+    .logo {
+        font-family: Raleway;
+        color: $main-color;
+        font-weight: 700;
+        font-size: 26px;
+        text-decoration: none;
+        padding-top: 24px;
+        padding-bottom: 25px;
+        margin-right: 93px;
+
+            &_footer {
+                font-family: Raleway;
+                font-weight: 700;
+                font-size: 26px;
+                text-decoration: none;
+                color: white;
+            }
+
+            &__blue {
+                font-family: Raleway;
+                color:$second-color;
+                font-weight: 700;
+                font-size: 26px;
+                text-decoration: none;
+            }
+            &__link{
+                color: white;
+            }
+    }
+    .navigation {
+        display: flex;
+        gap: 50px;
+        flex-direction: row;
+        margin-top: 0px;
+        margin-left: 0px;
+            &__item {
+                color: $main-color;
+                list-style-type: none;
+                padding: 32px 0 32px 0;
+                position: relative;
+                &:hover,
+                &:focus{
+                    @include underline;
+                    color: $second-color;
+                    transition: 300ms ease-in;
+                }
+
+                &_active {
+                    color: $second-color;
+                    list-style-type: none;
+                    position: relative;
+                    padding: 32px 0 32px 0;
+                    @include underline
+                }
+            }
+            &_android{
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                color: $main-color;
+                font-size: 40px;
+                font-weight: 500;
+                letter-spacing: 0.8px;
+                &:hover{
+                    color: $second-color !important;
+                }
+            }        
+    }
+    .info {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        display: flex;
+        gap: 40px;
+        margin-right: 0;
+        margin-left: auto;
+        align-items: center;
+
+            &__item {
+                color:$third-color;
+                display: inline-flex;
+                transition: 300ms ease-in;
+                align-items: center;
+                transition: 300ms ease-in;
+                &:hover,
+                &:focus{
+                    color: $second-color;
+                    transition: 300ms ease-in;
+
+                }
+                &:hover svg,
+                &:focus svg{
+                    fill: $second-color;
+                    transition: 300ms ease-in;
+
+                }
+            }
+            
+            &_android{
+                font-size: 34px;
+                font-weight: 500;
+                letter-spacing: 0.6px;
+                margin-top: auto;
+                &-tel{
+                    color: $second-color;     
+                }
+                &-email{
+                    color: $third-color;
+                    font-size: 24px;
+                    margin-top: 32px;     
+                }    
+            }
+
+            &__icon {
+                fill: $icon-color;
+                margin-right: 10px;
+            }
+        }
+    }

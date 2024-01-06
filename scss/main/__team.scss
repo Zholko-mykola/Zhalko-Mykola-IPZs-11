@@ -1,0 +1,143 @@
+@import"../variables.scss";
+@import"../mixin.scss";
+
+.card {
+      background-color: white;
+      border-radius: 0px 0px 4px 4px;
+      box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  
+              &__footer {
+              padding: 30px 0 30px 0;
+              }
+  
+              &__title {
+              color: $main-color;
+              font-size: 16px;
+              text-align: center;
+              margin: 0 auto;
+              }
+  
+              &__sub-title {
+              color: $third-color;
+              font-size: 16px;
+              font-weight: 400;
+              text-align: center;
+              margin-top: 10px;
+              }
+              &img{
+              @media (max-width:480px){
+                width: 450px;
+                height: 460px;
+            }}
+  }
+  .socials {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+              &__instagram {
+              position: relative;
+              display: block;
+              width: 44px;
+              height: 44px;
+              padding: 12px 12px 12px 12px;
+              border-radius: 22px;
+              z-index: 2;
+              fill: $icon-color;
+              &:focus,
+              &:hover{
+                  &::before{
+                      opacity: 1;
+                  }
+                  & .socials__icon{
+                      fill: white;
+                  }
+              }
+              &::before{
+                  position: absolute;
+                  content: "";
+                  inset: 0; 
+                  border-radius: 22px;
+                  background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+                  z-index: 1;
+                  opacity: 0;
+                  transition: opacity 0.25s linear;
+              }
+  
+              }
+  
+              &__icon {
+              width: 20px;
+              height: 20px;
+              fill:$icon-color;
+              z-index: 2;
+              position: absolute;
+  
+          }
+  
+  
+              &__item {
+              background: white;
+              width: 44px;
+              height: 44px;
+              padding: 12px 12px 12px 12px;
+              border-radius: 22px;
+              transition-duration: 250ms;
+              z-index: 1;
+              display: block;
+              position: relative;
+              &:focus .socials__icon,
+              &:hover .socials__icon{
+                  fill: white;
+              }
+              &_footer{
+                  background-color: rgba(255, 255, 255, 0.1);
+                  width: 44px;
+                  height: 44px;
+                  padding: 12px 12px 12px 12px;
+                  border-radius: 22px;
+                  transition-duration: 250ms;
+                  z-index: 1;
+                  display: block;
+                  position: relative;
+              }
+              
+              }
+  }
+  .twitter {
+      &:hover,
+      &:focus{
+          background-color: #1DA1F2;
+      }
+  }
+  .facebook {
+      &:hover,
+      &:focus{
+          background-color: #4267B2;        
+      }
+  }
+  .linkedin {
+      &:hover,
+      &:focus{
+          background-color: #0077B5;        
+      }
+  }
+
+@media (max-width:1024px){
+    .card{
+        & img{
+            width: 354px;
+            height: 374px;
+        }
+    }
+}
+
+@media (max-width:480px){
+    .card{
+        & img{
+            width: 450px;
+            height: 460px;
+        }
+    }
+}
+

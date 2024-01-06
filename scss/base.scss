@@ -1,0 +1,131 @@
+@import"./variables.scss";
+@import"./mixin.scss";
+
+
+.container {
+    @include container(1200px);
+    gap: 0;
+		&_header {
+            @include container(1200px);
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+		}
+
+		&_footer {
+            justify-content: space-around;
+            @include container(1200px);
+            margin: 0 auto;
+            align-items: baseline;
+            &_mailing{
+                margin-left: auto;
+                @media (max-width:1170px){
+                    margin: 0;
+                }
+            }
+		}
+}
+
+.title {
+    color: $main-color;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    @media (max-width:768px){
+        margin-bottom: 30px;
+    }    
+}
+
+.section {
+
+    &_hero {
+        background-color: $footer-color;
+        width: 100%;
+        text-align: center;
+    }
+
+    &_work {
+        padding-bottom: 94px;
+    }
+
+    &_team {
+        background-color: $ligh-gray;
+        padding: 94px 0 94px 0;
+    }
+
+    &_clients {
+        padding: 94px 0 94px 0;
+        font-weight: 700;
+        font-size: 36px;
+    }
+    &_portfolio {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+}
+
+.work{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.team{
+    background-color: $ligh-gray;
+    &__list{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+section{
+    padding: 94px 0;
+    @media (max-width:768px){
+        padding: 60px 0;
+    }
+}
+
+.clients{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.features{
+    padding: 94px 0 0 0;
+    @media (max-width:768px){
+        padding: 60px 0 60px 0;
+    }
+    &__list {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.burger{
+    display: none;
+}
+
+@media (max-width:768){
+    .container{
+        @include container(738px);
+        justify-content: center;
+        &_footer{ 
+            &_mailing{
+                margin-top: 60px;
+                text-align: center;
+                margin-left: 0;
+                @media (max-width:768px){
+                    margin: 0;   
+                }
+            }
+        }
+    }
+}
+

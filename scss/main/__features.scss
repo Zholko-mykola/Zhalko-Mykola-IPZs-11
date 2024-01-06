@@ -1,0 +1,58 @@
+@import"../variables.scss";
+@import"../mixin.scss";
+
+.feature {
+    color: $third-color;
+    font-weight: 400;
+    max-width: 270px;
+
+		&__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $ligh-gray;
+            max-height: 120px;
+            margin-bottom: 30px;
+            padding: 25px 100px 25px 100px;
+            @media (max-width:480px){
+                  padding: 25px 190px;
+              }
+		}
+
+		&__title {
+            color: $main-color;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+		}
+
+		&__text {
+            color: $third-color;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.42px;
+            margin: 0 auto;
+		}
+}
+
+@media (max-width:1024px){
+      .feature{
+            max-width: 354px;
+            & svg{
+                  width: 70px;
+                  height: 70px;
+            }
+      }
+  }
+  @media (max-width:640px){
+      .feature{
+            max-width: 450px;
+            & svg{
+                  width: 70px;
+                  height: 70px;
+            }
+      }
+  }

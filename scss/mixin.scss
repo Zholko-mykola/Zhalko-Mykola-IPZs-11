@@ -1,0 +1,29 @@
+@import "variables.scss";
+
+@mixin underline{
+    &::after{
+        position: absolute;
+        content: "";
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+        bottom: -2px;
+        left: 0px;
+        background-color: $second-color;
+        transition: 300ms ease;
+    }
+}
+@mixin button($padd, $bg, $color, $rad){
+    background-color: $bg;
+    color: $color;
+    padding: $padd;
+    border-radius: $rad;
+}
+@mixin container($max){
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 15px;
+        margin: 0 auto;
+        gap: 30px;
+        max-width: $max;
+}
