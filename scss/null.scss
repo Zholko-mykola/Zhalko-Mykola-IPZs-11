@@ -1,0 +1,39 @@
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: $main-color;
+}
+button{
+    cursor: pointer;
+}
+li{
+    list-style-type: none;
+}
+img{
+    display: block;
+    z-index: 1;
+}
+ul{
+    padding-left: 0px;
+    margin: 0;
+}
+body{
+    font-family: Roboto, sans-serif;
+    color: var(--main_color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+p{
+    margin: 0;
+}
+header{
+    position: relative;
+}
+
+*{
+    box-sizing: border-box;
+}
+footer .socials__icon{
+    fill: white;
+}

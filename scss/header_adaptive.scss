@@ -1,0 +1,103 @@
+@import"./variables.scss";
+@import"./mixin.scss";
+
+header{
+    border-bottom: 1px solid #ECECEC;
+}
+
+.logo {
+    font-family: Raleway;
+    color: $main-color;
+    font-weight: 700;
+    font-size: 26px;
+    text-decoration: none;
+    padding-top: 24px;
+    padding-bottom: 25px;
+    margin-right: 93px;
+
+		&_footer {
+            font-family: Raleway;
+            font-weight: 700;
+            font-size: 26px;
+            text-decoration: none;
+            color: white;
+            @media (max-width:1170px){
+                text-align: center;                    
+            }
+		}
+
+		&__blue {
+            font-family: Raleway;
+            color:$second-color;
+            font-weight: 700;
+            font-size: 26px;
+            text-decoration: none;
+		}
+        &__link{
+            color: white;
+        }
+}
+.navigation {
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 0px;
+		&__item {
+            color: $main-color;
+            list-style-type: none;
+            padding: 32px 0 32px 0;
+            position: relative;
+            &:hover,
+            &:focus{
+                @include underline;
+                color: $second-color;
+                transition: 300ms ease-in;
+            }
+
+			&_active {
+                color: $second-color;
+                list-style-type: none;
+                position: relative;
+                padding: 32px 0 32px 0;
+                @include underline
+			}
+		}
+        
+}
+.info {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: flex;
+    gap: 40px;
+    margin-right: 0;
+    margin-left: auto;
+    align-items: center;
+
+		&__item {
+            color:$third-color;
+            display: inline-flex;
+            transition: 300ms ease-in;
+            align-items: center;
+            transition: 300ms ease-in;
+            &:hover,
+            &:focus{
+                color: $second-color;
+                transition: 300ms ease-in;
+
+            }
+            &:hover svg,
+            &:focus svg{
+                fill: $second-color;
+                transition: 300ms ease-in;
+
+            }
+		}
+        
+
+		&__icon {
+            fill: $icon-color;
+            margin-right: 10px;
+		}
+}
+

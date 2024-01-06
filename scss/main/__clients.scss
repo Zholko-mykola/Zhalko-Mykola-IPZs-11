@@ -1,0 +1,45 @@
+@import"../variables.scss";
+@import"../mixin.scss";
+
+.client {
+      border: 1px solid $icon-color;
+      border-radius: 4px;
+      padding: 16px 32px 16px 32px;
+      max-width: 170px;
+      max-height: 92px;
+      transition: 300ms ease-in;
+      display: inline-block;
+              &__logo {
+              fill: $icon-color;
+              max-width: 106px;
+              max-height: 60px;
+              transition: 300ms ease-in;
+              }
+          &:hover,
+          &:focus{
+              border: 1px solid $second-color;
+              transition-duration: 300ms;
+          }
+          &:hover .client__logo,
+          &:focus .client__logo{
+              fill: $second-color;
+              transition-duration: 150ms;
+          }
+  }
+  @media (max-width:1024px){
+    .client{
+        max-width: 226px;
+        max-height: 92px;
+        padding: 16px 60px 16px 60px;
+        justify-content: center;
+    }
+}
+
+@media (max-width:640px){
+    .client{
+        width: 195px;
+        height: 92px;
+        padding: 16px 52px 16px 52px;
+        
+    }
+}

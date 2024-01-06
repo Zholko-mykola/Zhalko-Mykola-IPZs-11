@@ -1,0 +1,258 @@
+@import"../variables.scss";
+@import"../mixin.scss";
+
+.modal {
+    display: block;
+    align-self: center;
+    min-width: 528px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 40px;
+    position: relative;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    transition: 300ms ease-in;
+		&__absolute {
+            position: absolute;
+		}
+
+		&__title {
+            color: $main_color;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            margin: 0 auto;
+            margin-bottom: 2px;
+		}
+
+		&__label {
+            color: $third_color;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.12px;
+            margin: 10px 0 4px 0px;
+            display:inline-block;
+            transition: 300ms ease-in;
+		}
+
+		&__checkbox-fix {
+            position: relative; 
+		}
+
+		&__input {
+            height: 40px;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid rgba(33, 33, 33, 0.20);
+            padding: 0 0 0 42px;
+            transition: 300ms ease-in;
+            &:hover,&:focus{
+                border: 1px solid $second-color;
+                transition: 300ms;
+                outline: none;   
+            }
+            &:hover+.modal__icon,
+            &:focus+.modal__icon{
+                fill: $second-color;
+                transition: 300ms ease-in;
+            }
+		}
+
+		&__icon {
+            display: inline-block;
+            position: absolute;
+            top: 11px;
+            left: 12px;
+            fill: $main_color;
+            transition: 300ms ease-in;
+		}
+
+		&__textarea {
+            height: 120px;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid rgba(33, 33, 33, 0.20);
+            padding: 12px 16px 12px 16px;
+            resize: none;
+            &:focus,
+            &:hover{
+                border: 1px solid $second-color;
+                outline: none;
+                transition: 300ms ease-in;
+            }
+		}
+
+		&__li {
+
+			&_checkbox {
+                position: relative;
+                text-align: center;
+                color: $third_color;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 171.429%;
+                letter-spacing: 0.42px;
+                margin-top: 20px;
+			}
+
+			&_button {
+                text-align: center;
+			}
+		}
+
+		&__check {
+            display: flex;
+            cursor: pointer;
+            position: relative;
+            margin: auto;
+            width: 100%;
+            -webkit-tap-highlight-color: transparent;
+            transform: translate3d(0, 0, 0);
+            align-items: center;
+            & svg{
+                position: relative;
+                z-index: 1;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke: #C8CCD4;
+                stroke-width: 1.5;
+                transform: translate3d(0, 0, 0);
+                transition: all 0.2s ease;
+                margin-left: 12px;
+                @media (max-width:768px){
+                    margin-left: 0;
+                }
+            }
+            & svg path{
+                stroke-dasharray: 60;
+                stroke-dashoffset: 0;
+            }
+            & svg polyline{
+                stroke-dasharray: 22;
+                stroke-dashoffset: 66;
+            }
+            &:hover::before{
+                opacity: 1;
+            }
+            &:hover svg{
+                stroke: $second-color;
+            }
+		}
+
+		&__span {
+            color: $second_color;
+            text-decoration: underline;
+		}
+
+		&__submit {
+            @include button(10px 52px 10px 52px,$second-color ,white, 4px );
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 30px;
+            letter-spacing: 0.96px;
+            margin-top: 30px;
+            border: none;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            &:hover,
+            &:focus{
+                background-color: $hover-color;
+                transition: 300ms ease-in;
+            }
+		}
+
+		&__exit-button {
+            position: absolute;
+            border: 1px solid $border_color;
+            width: 30px;
+            height: 30px;
+            right: 8px;
+            top: 8px;
+            border-radius: 15px;
+            background-color: white;
+            transition: 300ms ease-in;
+            &:hover,
+            &:focus{
+                border: 1px solid $second-color;
+                transition: 300ms ease-in;
+            }
+		}
+        &__span-text{
+            margin-left: 10px;
+            @media (max-width:768px){
+                margin-left: 8px;
+            }
+            @media (max-width:650px){
+                font-size: 12px;
+            }
+        }
+        @media (max-width:320px){
+            padding: 20px;
+        }
+}
+#cbx:checked + .modal__check svg {
+    stroke: #4285F4;
+}
+
+#cbx:checked + .modal__check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+
+#cbx:checked + .modal__check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+#cbx:checked + .check svg {
+    stroke: #4285F4;
+  }
+  
+  #cbx:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+  }
+  
+  #cbx:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+
+  @media (max-width:1024px){
+    .modal{
+        min-width: 370px;
+        &__title{
+            max-width: 370px;   
+        }
+        &__absolute{
+            width: 100%;
+            font-size: 12px;
+        }
+        &__li_checkbox{
+            text-align: inherit;
+        }
+    }
+}
+
+@media (max-width:640px){
+    .modal{
+
+        min-width: 370px;
+        max-width: 450px;
+        &__title{
+            max-width: 370px;   
+        }
+        &__absolute{
+            width: 100%;
+            font-size: 12px;
+        }
+        &__li_checkbox{
+            text-align: inherit;
+        }
+    }
+}

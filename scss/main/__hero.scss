@@ -1,0 +1,48 @@
+@import"../variables.scss";
+@import"../mixin.scss";
+
+.hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.40), rgba(47, 48, 58, 0.40)), url(../images/hero_bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+		&__text {
+            max-width: 700px;
+            text-align: center;
+            color: white;
+            font-size: 44px;
+            font-style: normal;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            @media (max-width:768px){
+                  font-size: 26px;
+                  max-width: 360px;
+            }
+		}
+
+		&__button {
+            @include button(10px 24px 10px 24px,$second-color , white, 5px);
+            border-radius: 4px;
+            font-size: 16px;
+            letter-spacing: 0.96px;
+            line-height: 187.5%;
+            font-weight: 700;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+            border: none;
+            cursor: pointer;
+            transition: 300ms ease-in;
+            &:focus,
+            &:hover{
+                background-color: $hover-color;
+                transition: 300ms ease-in;
+            }
+	}
+      @media (max-width:1024px){
+            padding: 118px 0;
+      }
+}
